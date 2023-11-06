@@ -1,6 +1,6 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
 export const searchBarState = atom<boolean>({
-	key: 'searchBarState',
-	default: false,
+  key: "searchBarState",
+  default: false,
 });

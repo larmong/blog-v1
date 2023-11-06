@@ -15,31 +15,18 @@ import { BiSolidUser } from "react-icons/bi";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { HiBell } from "react-icons/hi";
 import { useRecoilState } from "recoil";
-import { searchBarState } from "../../../../commons/store/store";
+import { routeState, searchBarState } from "../../../../commons/store/store";
 import HeaderSearchBar from "./searchBar/SearchBar.container";
 
 export default function Header() {
-  const router = useRouter();
-  const [route, setRoute] = useState("");
-  const [title, setTitle] = useState("");
+  const [router] = useRecoilState(routeState);
   const [searchBar] = useRecoilState(searchBarState);
-
-  useEffect(() => {
-    const route = String(router.route.split("/")[1]);
-    if (router.route === "/") {
-      setRoute("dashboard");
-      setTitle("dashboard");
-    } else {
-      setRoute(`dashboard > ${route}`);
-      setTitle(route);
-    }
-  }, [router]);
 
   return (
     <Wrapper>
       <TitleGroup>
-        <Router>{route}</Router>
-        <Title>{title}</Title>
+        <Router>{!router ? "dashboard" : `dashboard > ${router}`}</Router>
+        <Title>{!router ? "dashboard" : router}</Title>
       </TitleGroup>
       <Menu>
         <Search isOpen={searchBar}>

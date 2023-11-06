@@ -17,6 +17,11 @@ export const Router = styled.span`
   margin-bottom: 2px;
   text-transform: uppercase;
   color: ${Common.color.gray1};
+  span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 `;
 
 export const Title = styled.h3`

@@ -12,5 +12,5 @@ export const Page = styled.div`
 
 export const Contents = styled.div`
   background: ${Common.color.white};
-  height: calc(100vh - 164.5px);
+  height: calc(100vh - 190px);
 `;

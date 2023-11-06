@@ -12,7 +12,11 @@ import {
   Wrapper,
 } from "./Header.style";
 import { BiSolidUser } from "react-icons/bi";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
+import {
+  MdDarkMode,
+  MdKeyboardDoubleArrowRight,
+  MdLightMode,
+} from "react-icons/md";
 import { HiBell } from "react-icons/hi";
 import { useRecoilState } from "recoil";
 import { routeState, searchBarState } from "../../../../commons/store/store";
@@ -25,7 +29,17 @@ export default function Header() {
   return (
     <Wrapper>
       <TitleGroup>
-        <Router>{!router ? "dashboard" : `dashboard > ${router}`}</Router>
+        <Router>
+          {!router ? (
+            "dashboard"
+          ) : (
+            <span>
+              dashboard
+              <MdKeyboardDoubleArrowRight />
+              {router}
+            </span>
+          )}
+        </Router>
         <Title>{!router ? "dashboard" : router}</Title>
       </TitleGroup>
       <Menu>

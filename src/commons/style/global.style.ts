@@ -37,6 +37,7 @@ export const GlobalStyle = css`
 		background: #fff;
 	}
 	input {
+		border: 1px solid ${Common.color.bg};
 		font-size: 15px;
 	}
 	button:focus,

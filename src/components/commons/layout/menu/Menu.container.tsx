@@ -8,6 +8,7 @@ import { MenuTypes } from "./Menu.types";
 import { useRecoilState } from "recoil";
 import { routeState } from "../../../../commons/store/store";
 import { useEffect, useState } from "react";
+import { FiGitCommit } from "react-icons/fi";
 
 export default function Menu() {
   const router = useRouter();
@@ -40,8 +41,14 @@ export default function Menu() {
     {
       active: false,
       icon: <BsFillBarChartFill />,
-      name: "memo",
-      route: "memo",
+      name: "guest book",
+      route: "guestbook",
+    },
+    {
+      active: false,
+      icon: <FiGitCommit />,
+      name: "log",
+      route: "log",
     },
   ]);
 

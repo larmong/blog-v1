@@ -12,7 +12,8 @@ export const Wrapper = styled.ul`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 150px;
+		width: 100%;
+		max-width: 150px;
 		height: 100%;
 		color: ${Common.color.white};
 		background: ${Common.color.gray1};

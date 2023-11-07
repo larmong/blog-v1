@@ -1,6 +1,6 @@
 import Menu from '../../components/commons/layout/menu/Menu.container';
 import Header from '../../components/commons/layout/header/Header.container';
-import { Page, Wrapper } from '../../components/commons/layout/Layout.style';
+import { Contents, Page, Wrapper } from '../../components/commons/layout/Layout.style';
 
 interface ILayoutProps {
 	children: JSX.Element;
@@ -12,7 +12,7 @@ export default function Layout(props: ILayoutProps) {
 			<Menu />
 			<Page>
 				<Header />
-				{props.children}
+				<Contents>{props.children}</Contents>
 			</Page>
 		</Wrapper>
 	);

@@ -1,8 +1,8 @@
-import { css } from "@emotion/react";
-import { Common } from "./emotion";
+import { css } from '@emotion/react';
+import { Common } from './emotion';
 
 export const GlobalStyle = css`
-  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,900&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,900&display=swap');
 
   * {
     margin: 0;
@@ -53,5 +53,14 @@ export const GlobalStyle = css`
     font-size: 15px;
     line-height: 23px;
     color: #bdbdbd;
+  }
+`;
+
+export const transition = css`
+  transition: all 0.3s ease;
+`;
+export const hover = css`
+  &:hover {
+    opacity: 0.7;
   }
 `;

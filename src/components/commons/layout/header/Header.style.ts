@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 40px 0;
+	padding: 50px 0 20px 0;
 	width: 100%;
 `;
 export const TitleGroup = styled.div``;

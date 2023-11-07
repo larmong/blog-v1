@@ -1,6 +1,8 @@
-import { TableContainer, Wrapper } from './Post.style';
-import TabMenu from '../../commons/tabmenu/Tabmenu.container';
 import { useState } from 'react';
+
+import TabMenu from '../../commons/tabmenu/Tabmenu.container';
+import BoardTable from '../../commons/board/table/BoardTable.container';
+import { TableContainer, Wrapper } from './Post.style';
 
 export default function PostContainer() {
 	const [tabMenu, setTabMenu] = useState([
@@ -21,7 +23,9 @@ export default function PostContainer() {
 	return (
 		<Wrapper>
 			<TabMenu menu={tabMenu} setMenu={setTabMenu} />
-			<TableContainer>테이블</TableContainer>
+			<TableContainer>
+				<BoardTable colum={['NO', '제목', '날짜']} size={['80px', 'calc(100% - 230px)', '150px']} />
+			</TableContainer>
 		</Wrapper>
 	);
 }

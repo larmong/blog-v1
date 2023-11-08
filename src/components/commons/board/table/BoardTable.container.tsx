@@ -27,9 +27,9 @@ export default function BoardTable(props: IPropsBoardTable) {
           <TableBody>
             {data.slice((current - 1) * 10, current * 10).map((post: any, postIndex: number) => (
               <TableItem key={postIndex}>
-                {props.colum.map((_, columIndex: number) => (
-                  <p key={columIndex} style={{ width: `${props.size[columIndex]}` }}>
-                    <span>{post[Object.keys(post)[columIndex]]}</span>
+                {props.dataName.map((name, i: number) => (
+                  <p key={i} style={{ width: `${props.size[i]}` }}>
+                    <span>{post[name]}</span>
                   </p>
                 ))}
               </TableItem>

@@ -1,4 +1,5 @@
 export interface IPropsBoardTable {
-	size: string[];
-	colum: string[];
+  size: string[];
+  colum: string[];
+  dataName: string[];
 }

@@ -16,6 +16,11 @@ export const searchValueState = atom<string>({
   default: '',
 });
 
+export const pagerCurrentState = atom<number>({
+  key: 'pagerCurrentState',
+  default: 1,
+});
+
 export const getPostList = atom<PostTypes[]>({
   key: 'getPostList',
   default: [

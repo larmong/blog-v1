@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 import { Next, Pager, Prev, Wrapper } from './Pagination.style';
-import { getPostList } from '../../../commons/store/store';
+import { getPostList, pagerCurrentState } from '../../../commons/store/store';
 
 export default function Pagination() {
+  const postCount = 10;
   const [post] = useRecoilState(getPostList);
-  const [current, setCurrent] = useState(1);
-  // const [total] = useState(Math.ceil(post.length / 5));
-  const [total] = useState(13);
+  const [current, setCurrent] = useRecoilState(pagerCurrentState);
+  const total = Math.ceil(post.length / postCount);
 
   // current pager 가운데로 이동
   let startPage = current - 2;

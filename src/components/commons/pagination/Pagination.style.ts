@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   padding-bottom: 30px;
 `;
 
-const BtnStyle = css`
+export const BtnStyle = css`
   ${transition};
   ${hover};
   display: flex;
@@ -22,6 +22,7 @@ const BtnStyle = css`
   border: 1px solid ${Common.color.default};
   border-radius: 3px;
   gap: 5px;
+  cursor: pointer;
   svg {
     width: 20px;
     height: 20px;

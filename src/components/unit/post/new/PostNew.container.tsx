@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { collection, doc, setDoc } from 'firebase/firestore';
 import { router } from 'next/client';
 
+import { BtnGroup, Wrapper } from './PostNew.style';
 import { db } from '../../../../commons/libraries/firebase/firebase.config';
 import { CustomChangeEvent } from '../../../../commons/types/global.types';
-import { Wrapper } from './PostNew.style';
+import NewContainer from '../../../commons/board/new/New.container';
+import { useRouter } from 'next/router';
 
 export default function PostNewContainer() {
+  const router = useRouter();
   const [newPost, setNewPost] = useState({
     type: '',
     title: '',
@@ -15,12 +18,12 @@ export default function PostNewContainer() {
     writer: '루루',
   });
 
-  const handleInputValue = (name: string) => (e: CustomChangeEvent) => {
-    setNewPost({
-      ...newPost,
-      [name]: e.target.value,
-    });
-  };
+  // const handleInputValue = (name: string) => (e: CustomChangeEvent) => {
+  //   setNewPost({
+  //     ...newPost,
+  //     [name]: e.target.value,
+  //   });
+  // };
 
   const onClickSubmit = async () => {
     try {
@@ -38,13 +41,13 @@ export default function PostNewContainer() {
 
   return (
     <Wrapper>
-      type: <input type="text" value={newPost.type} onChange={handleInputValue('type')} />
-      <br />
-      title: <input type="text" value={newPost.title} onChange={handleInputValue('title')} />
-      <br />
-      content: <input type="text" value={newPost.content} onChange={handleInputValue('content')} />
-      <br />
-      <button onClick={onClickSubmit}>등록</button>
+      <NewContainer />
+      <BtnGroup>
+        <button onClick={() => router.back()}>취 소</button>
+        <button className="btn-full" onClick={onClickSubmit}>
+          등 록
+        </button>
+      </BtnGroup>
     </Wrapper>
   );
 }
